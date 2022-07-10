@@ -1,9 +1,9 @@
 # DBI202-MyAssignment-
-*** Phân Tích Quản Lý Điểm FLM ***
+**Phân Tích Quản Lý Điểm FLM **
 
-Xác Định Và Tổng Hợp Các Dữ Liệu
+**Xác Định Và Tổng Hợp Các Dữ Liệu**
 
-Bảng thông tin điểm thành phần
+**Bảng thông tin điểm thành phần**
 
 ![image](https://user-images.githubusercontent.com/107615845/178150150-51586184-ea05-487d-9d04-e4d42b870454.png)
 
@@ -56,3 +56,12 @@ Bảng thông tin điểm thành phần
 **Note**
 
       Tiêu Chí, Tỉ Trọng Và Hướng Dẫn Cho Điểm Trên Các Hạng Mục
+
+
+[ **Bảng mã môn, khóa học, trạng thái học tập của sinh viên** ](url)
+
+
+[![image](https://user-images.githubusercontent.com/107615845/178151545-69c03a12-f0d3-4225-b057-112e7022e6af.png)
+](url)
+
+[      Mô Tả: Số Lượng Môn Học, Khóa Học](url)
