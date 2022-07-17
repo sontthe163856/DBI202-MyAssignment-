@@ -122,3 +122,10 @@
      Điểm Sinh Viên Đạt Được Trên Thang Điểm Quy Chuẩn
      
   
+# **Xác Định Các Thực Thể Và Các Thông Tin Thuộc Tính**
+
+# **Xác định các thực thể**
+
+# ** Thực thể 1: Student
+
+           
