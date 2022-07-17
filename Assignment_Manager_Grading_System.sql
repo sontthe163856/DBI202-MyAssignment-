@@ -28,6 +28,10 @@ CREATE TABLE [Group](
 	SemID nvarchar(150) NOT NULL,
 	SuID char(150) NOT NULL,
 	LID char(150) NOT NULL,
+	ClassID char(10) NOT NULL, 
+	CONSTRAINT fk_Group FOREIGN KEY (LID)  REFERENCES Lecturers(LID),
+	CONSTRAINT fk_Group2 FOREIGN KEY (SuID) REFERENCES [Subject](SuID),
+	CONSTRAINT fk_group4 FOREIGN KEY (ClassID) REFERENCES CLASSES(ClassID),
 );
 
 CREATE TABLE [Subject](
@@ -49,9 +53,9 @@ CREATE TABLE Grade(
 	LID char(150) NOT NULL,
 	Mark float NOT NULL,
 	CONSTRAINT Check_Mark CHECK (Mark >= 0 and Mark <= 10),
-	--constraint Ass_Primary_key Primary KEY (StuID,SuID),
-	constraint As_Foreign_key FOREIGN KEY (StuID) references Student(StuID),
-	constraint As_Foreign_key_1 FOREIGN KEY (SuID) references Subject(SuID),
+	constraint Gr_Primary_key Primary KEY (StuID,SuID),
+	constraint Gr_Foreign_key FOREIGN KEY (StuID) references Student(StuID),
+	constraint Gr_Foreign_key_1 FOREIGN KEY (SuID) references Subject(SuID),
 );
 
 
@@ -65,8 +69,8 @@ constraint Ass_Foreign_key FOREIGN KEY (SuID) references Subject(SuID)
 );
 
 CREATE TABLE Category(
-	CatID char(10) NOT NULL PRIMARY KEY,
-	CatName varchar(150) NOT NULL,
+	TypeID char(10) NOT NULL PRIMARY KEY,
+	Decription varchar(150) NOT NULL,
 );
 
 CREATE TABLE CLASSES(
@@ -81,17 +85,17 @@ CREATE TABLE Assessment_Student
 	[SuID] [char](150) NOT NULL,
 	[Date] [date] NOT NULL,
 	[Score] [int] NOT NULL,
-  --constraint Ass_Primary_key Primary KEY (AssID,SuID),
-  constraint As_Foreign_key FOREIGN KEY (AssID) references Assessment(AssID),
-  --constraint As_Foreign_key_1 FOREIGN KEY (SuID) references Subject(SuID),
+  constraint Ass_S_Primary_key Primary KEY (AssID,SuID),
+  constraint Ass_S_Foreign_key FOREIGN KEY (AssID) references Assessment(AssID),
+  constraint Ass_S_Foreign_key_1 FOREIGN KEY (SuID) references Subject(SuID),
 );
 
 CREATE TABLE [Join](
 	StuID char(150) NOT NULL,
 	GID varchar(150) NOT NULL,
-	--constraint Ass_Primary_key Primary KEY (GID,StuID),
-	constraint As_Foreign_key FOREIGN KEY (GID) references [Group](GID),
-	constraint As_Foreign_key_1 FOREIGN KEY (StuID) references Student(StuID),
+	constraint Ass_Primary_key Primary KEY (GID,StuID),
+	constraint Join_Foreign_key FOREIGN KEY (GID) references [Group](GID),
+	constraint Join_Foreign_key_1 FOREIGN KEY (StuID) references Student(StuID),
 );
 
 
@@ -99,7 +103,7 @@ CREATE TABLE Class_Semester(
 	SemID char(150) NOT NULL,
 	ClassID char(10) NOT NULL,
 	--constraint Ass_Primary_key Primary KEY (SemID,ClassID),
-	constraint As_Foreign_key FOREIGN KEY (SemID) references [Semester](SemID),
-	constraint As_Foreign_key_1 FOREIGN KEY (ClassID) references Classes(ClassID),
+	constraint Cl_S_Foreign_key FOREIGN KEY (SemID) references [Semester](SemID),
+	constraint Cl_S_Foreign_key_1 FOREIGN KEY (ClassID) references Classes(ClassID),
 );
 
